@@ -7,6 +7,7 @@
   --light-back: #f5f4fa;
   --just-white: #ffffff;
   --just-black: #000000;
+  --bg-image-color: rgba(47, 48, 58, 0.4);
 }
 body {
   font-family: "Roboto", sans-serif;
@@ -54,7 +55,6 @@ button {
   padding-top: 94px;
   padding-bottom: 94px;
 }
-
 .container {
   width: 1200px;
   margin: 0 auto;
@@ -137,7 +137,20 @@ header {
 }
 /*main header*/
 .main-head-background {
-  background-color: var(--dark-back);
+  /* background-color: var(--dark-back); */
+  background-image: linear-gradient(
+      to left,
+      var(--bg-image-color),
+      var(--bg-image-color)
+    ),
+    url(../images/background-img.jpg);
+  background-size: auto 600px;
+  /* or "background-size: 1600px 600px" and skip max-width and margins*/
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-repeat: no-repeat;
+  background-position: center;
   padding: 200px 0;
   text-align: center;
 }
@@ -223,7 +236,7 @@ header {
   justify-content: center;
   padding: 0px;
 }
-.list-team li {
+.list-team > li {
   background-color: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -234,7 +247,7 @@ header {
 }
 .list-team div {
   text-align: center;
-  padding: 30px 0;
+  padding: 30px 0 16px 0;
 }
 .employee-name {
   font-size: 16px;
@@ -279,6 +292,8 @@ header {
 .filter-button button:focus {
   background-color: var(--my-blue);
   color: var(--just-white);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
 }
 .prod-name {
@@ -288,6 +303,7 @@ header {
   letter-spacing: 0.06em;
   margin-top: 0px;
   margin-bottom: 4px;
+  color: var(--base-text-color);
 }
 .prod-type {
   font-size: 16px;
@@ -311,10 +327,19 @@ header {
   border-right: solid 1px #eeeeee;
   border-bottom: solid 1px #eeeeee;
 }
+.portfolio-link {
+  display: block;
+}
+.portfolio-link:hover,
+.portfolio-link:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
 /*footer section*/
 footer {
   background-color: var(--dark-back);
   padding: 60px 0;
+  /* display: flex; */
 }
 footer .logo {
   padding: 0px 0px 0px 0px;
@@ -342,4 +367,106 @@ footer .logo-part2 {
 .footer-mail,
 .footer-phone {
   color: rgba(255, 255, 255, 0.6);
+}
+/* SVG */
+.icon-nav {
+  fill: currentColor;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.header-contact-item {
+  fill: currentColor;
+}
+.img-advantage {
+  display: flex;
+  width: 270px;
+  height: 120px;
+  background: #f5f4fa;
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+.social-links li:not(:last-child) {
+  margin-right: 10px;
+}
+.social-links-img {
+  fill: #afb1b8;
+}
+.social-links svg:hover,
+.social-links svg:focus {
+  background-color: var(--my-blue);
+  fill: var(--just-white);
+  border-radius: 50%;
+}
+.our-clients {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.our-clients li {
+  display: flex;
+  width: 170px;
+  height: 92px;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+}
+.our-clients li:not(:last-child) {
+  margin-right: 30px;
+}
+.our-clients li:hover,
+.our-clients li:focus {
+  border-color: #2196f3;
+}
+.our-clients a {
+  fill: var(--color1, #afb1b8);
+}
+.our-clients a:hover,
+.our-clients a:focus {
+  fill: #2196f3;
+}
+.social-links-icons-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  box-shadow: none;
+}
+.social-links-icons-footer li:not(:last-child) {
+  margin-right: 10px;
+}
+.social-links-icons-footer a {
+  fill: var(--just-white);
+}
+.social-links-icons-footer svg:hover,
+.social-links-icons-footer svg:focus {
+  background-color: var(--my-blue);
+  border-radius: 50%;
+}
+.join-us {
+  color: var(--just-white);
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-weight: 700;
+  line-height: 1.17;
+}
+.social-links-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 70px;
+}
+.footer-box {
+  display: flex;
+  align-items: baseline;
 }
