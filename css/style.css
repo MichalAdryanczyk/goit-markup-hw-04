@@ -125,8 +125,8 @@ nav {
   color: var(--light-text-color);
   letter-spacing: 0.02em;
 }
-.header-contacts :hover,
-.header-contacts :focus,
+.header-contacts a:hover,
+.header-contacts a:focus,
 .footer-contact:hover,
 .footer-contact:focus {
   color: var(--my-blue);
@@ -144,9 +144,10 @@ header {
       var(--bg-image-color)
     ),
     url(../images/background-img.jpg);
-  background-size: auto 600px;
+  background-size: cover;
   /* or "background-size: 1600px 600px" and skip max-width and margins*/
   max-width: 1600px;
+  height: 600px;
   margin-left: auto;
   margin-right: auto;
   background-repeat: no-repeat;
@@ -247,7 +248,7 @@ header {
 }
 .list-team div {
   text-align: center;
-  padding: 30px 0 16px 0;
+  padding: 30px 0 30px 0;
 }
 .employee-name {
   font-size: 16px;
@@ -391,19 +392,26 @@ footer .logo-part2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-bottom: 30px;
-  padding-top: 30px;
+  margin-top: 16px;
+  gap: 10px;
 }
-.social-links li:not(:last-child) {
+/* .social-links li:not(:last-child) {
   margin-right: 10px;
-}
+} */
 .social-links-img {
-  fill: #afb1b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: currentColor;
+  color: #afb1b8;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
 }
-.social-links svg:hover,
-.social-links svg:focus {
+.social-links-img:hover,
+.social-links-img:focus {
   background-color: var(--my-blue);
-  fill: var(--just-white);
+  color: var(--just-white);
   border-radius: 50%;
 }
 .our-clients {
@@ -411,45 +419,51 @@ footer .logo-part2 {
   align-items: center;
   justify-content: center;
 }
-.our-clients li {
+.client-img {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: currentColor;
+  color: #afb1b8;
   width: 170px;
   height: 92px;
   border: 1px solid #afb1b8;
   border-radius: 4px;
-  justify-content: center;
-  align-items: center;
+}
+.client-img:hover,
+.client-img:focus {
+  border-color: var(--my-blue);
+  color: #2196f3;
 }
 .our-clients li:not(:last-child) {
   margin-right: 30px;
 }
-.our-clients li:hover,
-.our-clients li:focus {
-  border-color: #2196f3;
-}
-.our-clients a {
-  fill: var(--color1, #afb1b8);
-}
-.our-clients a:hover,
-.our-clients a:focus {
-  fill: #2196f3;
-}
-.social-links-icons-footer {
+.social-links-footer {
   display: flex;
   align-items: center;
   justify-content: center;
   border: none;
   box-shadow: none;
+  gap: 10px;
 }
-.social-links-icons-footer li:not(:last-child) {
+/* .social-links-footer li:not(:last-child) {
   margin-right: 10px;
+} */
+.social-links-footer-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: currentColor;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--just-white);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
 }
-.social-links-icons-footer a {
-  fill: var(--just-white);
-}
-.social-links-icons-footer svg:hover,
-.social-links-icons-footer svg:focus {
+.social-links-footer-img:hover,
+.social-links-footer-img:focus {
   background-color: var(--my-blue);
+  color: var(--just-white);
   border-radius: 50%;
 }
 .join-us {
@@ -463,7 +477,7 @@ footer .logo-part2 {
 .social-links-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   margin-left: 70px;
 }
 .footer-box {
